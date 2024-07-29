@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="../pretty.css">
+  <style>
+    i { 
+      color: lightseagreen;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+  </style>
+  <title>HTML & CSS 01-03-02</title>
 </head>
-
 <body>
-  <div>
-    <div>
-      <p><span style="font-size:100px">속성/특성<span style="color:#3498db">(attribute)</span></span></p>
-    </div>
-  </div>
-  <div>
-    <div>
-      <p><span style="font-size:72px">태그의 동작을 설정 및 제어</span></p>
-      <p><span style="color:#95a5a6"><span style="font-size:48px">태그마다 설정 가능한 속성들이 있음</span></span></p>
-    </div>
-  </div>
-  <div>
-    <div class="code">
-      <p><span style="color:#95a5a6"><span style="font-size:72px"><strong>&lt;img </strong></span></span><span
-          style="color:#2980b9"><span style="font-size:72px"><strong>src=&quot;</strong></span></span><span
-          style="color:#8e44ad"><span style="font-size:72px"><strong>./logo.png</strong></span></span><span
-          style="color:#2980b9"><span style="font-size:72px"><strong>&quot; alt=&quot;</strong></span></span><span
-          style="color:#8e44ad"><span style="font-size:72px"><strong>로고</strong></span></span><span
-          style="color:#2980b9"><span style="font-size:72px"><strong>&quot;</strong></span></span><span
-          style="color:#95a5a6"><span style="font-size:72px"><strong>&gt;</strong></span></span></p>
-    </div>
-  </div>
-</body>
+  <h1>인용문 관련 태그</h1>
+  <h2>blockquote와 cite 태그</h2>
+  <blockquote cite="https://developer.mozilla.org/ko/docs/Web/HTML/Element/blockquote">
+    <p>
+      HTML &lt;blockquote&gt; 요소는 안쪽의 텍스트가 긴 <mark>인용문</mark>임을 나타냅니다. <br>
+      주로 들여쓰기를 한 것으로 그려집니다. (외형을 바꾸는 법은 사용 일람을 참고하세요) <br>
+      인용문의 출처 URL은 cite 특성으로, 출처 텍스트는 &lt;cite&gt; 요소로 제공할 수 있습니다.
+    </p>
+  </blockquote>
+  <cite>&lt;blockquote&gt;: 인용 블록 요소</cite> from MDN
 
+  <br><br>
+
+  <blockquote cite="test"></blockquote>
+  <h2>짧은 인용문을 위한 q 태그</h2>
+  <p>
+    <strong>q</strong> 태그에 대해 MDN 문서는
+    <q cite="https://developer.mozilla.org/ko/docs/Web/HTML/Element/q"
+    >HTML &lt;q&gt;요소는 둘러싼 텍스트가 짧은 <br> 인라인 <mark>인용문</mark>이라는것을 나타냅니다.</q>
+    라고 설명하고 있습니다.
+  </p>
+
+  <br>
+
+  <h2>mark 태그</h2>
+  <p>
+    본 페이지는 "<mark>인용문</mark>"이란 키워드로 검색한 결과입니다. <br>
+    <strong>mark</strong> 태그는 사용자의 행동과 관련 있는 부분<i>(예: 검색 결과)</i>, <br>
+    또는 인용문에서 주시해야 할 부분들을 표시합니다.
+  </p>
+  <p>
+    mark 태그 역시 CSS와 병행하여 사용해야 합니다.
+  </p>
+  
+</body>
 </html>
