@@ -1,101 +1,259 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../html-css-tester.css">
-  <script defer src="../../html-css-tester.js"></script>
-
-  <script src="../pretty.css"></script>
-
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css" />
-
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit-icons.min.js"></script>
-  <title>HTML & CSS 01-07-01</title>
+  <link rel="stylesheet" href="../pretty.css">
+  <title>HTML & CSS 01-09-01</title>
 </head>
-
 <body>
+  
+  <h1>텍스트 관련 인풋 타입</h1>
 
-  <main>
-    <form
-    action="./01-result.html"
-    method="get"
-    autocomplete="off"
-  >
-
-    <label for="name">이름</label>
-    <input id="name" name="my-name" type="text">
-
+  <form action="#">
+    <label for="txtIp">text</label> <br>
+    <input 
+      id="txtIp"
+      type="text"
+      placeholder="5자 이하"
+      maxlength="5"
+    >
     <br><br>
 
-    <label for="age">나이</label>
-    <input id="age" name="my-age" type="number">
-
+    <label for="pwdIp">password</label> <br>
+    <input
+      id="pwdIp"
+      type="password"
+      placeholder="4자 이상"
+      minlength="4"
+    >
     <br><br>
 
+    <label for="srchIp">search</label> <br>
+    <input id="srchIp" type="search">
+    <br><br>
+
+    <label for="tlIp">tel</label> <br>
+    <input id="tlIp" type="tel">
+    <br><br>
     <button type="submit">제출</button>
-    <button type="reset">초기화</button>
-    <button type="button">초기화</button>
-  </form>
-  <!--form 태그안에는 목적지에에 사용자가 누른 버튼이나 텍스트 넣은 이미지 등등.. 보내주는 하나의 공간!-->
-  <!--action은 자바스크립트 백엔드 쪽에서 사용!
-  label input태그와 짝을 이룬다!
-  label에 for와 input에 id가 같은 이유는 둘을 연결시켜주는 것!
-  label이 input의 클릭 영역을 늘려줄 수 있다!
-  label을 눌려도 input을 클릭하는 것 처럼!
-  button에 submit은 form 테그안에 모든 내용들을 서버나 페이지로 보내주는 역할을 한다는 의미!
-  reset은 말그대로 초기화 하는 type!
-  button은 type에 있는 고유 기능을 사용하지 않고 자바스크립트로 함수를 만들어서 사용한다!
-  form 태크는 입력내용을 기억하는 오토 컴플릿 기능이 있음!! -> 로그인이나 옆사람이 보면 안되는 사이트는 오토컴플릿을 off로 하는 법이 필요하다.
-  -->
-  <form>
-
-    <fieldset>
-      <legend>반장</legend>
-
-      <label for="name_1">이름</label>
-      <input id="name_1" name="name_1" type="text">
-      <br><br>
-
-      <label for="age_2">나이</label>
-      <input id="age_1" name="age_1" type="number">
-
-    </fieldset>
-    <br>
-
-    <fieldset>
-      <legend>부반장</legend>
-
-      <label for="name_2">이름</label>
-      <input id="name_2" name="name_2" type="text">
-      <br><br>
-
-      <label for="age_2">나이</label>
-      <input id="age_2" name="age_2" type="number">
-
-    </fieldset>
-    <br>
-
-    <fieldset disabled>
-      <legend>서기</legend>
-
-      <label for="name_3">이름</label>
-      <input id="name_3" name="name_3" type="text">
-      <br><br>
-
-      <label for="age_3">나이</label>
-      <input id="age_3" name="age_3" type="number">
-    </fieldset>
-    <!--fieldset은 form태그 안에서 그룹을 만들어 주고 disabled를 처리하면 더욱 편리하게 사이트를 만들 수 있다!-->
   </form>
 
-  </main>
+  <h1>숫자 관련 인풋 타입</h1>
 
+  <form action="#">
+    <label for="numIp">number</label> <br>
+    <input 
+      id="numIp"
+      type="number"
+      min="0"
+      max="10"
+    >
+    <br><br>
+
+    <label for="rgIp">range</label> <br>
+    <input
+      id="rgIp"
+      type="range"
+      min="0"
+      max="100"
+      step="20"
+    >
+    <br><br>
+    <!-- 그 자체를 사용하기에는 어려움이 있음 자바스크립트와 결합을 해야함!!-->
+
+    <label for="dtIp">date</label> <br>
+    <input
+      id="dtIp"
+      type="date"
+      min="2020-01-01"
+      max="2030-12-31"
+    >
+    <br><br>
+
+  </form>
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pretty.css">
+    <title>HTML & CSS 01-09-03</title>
+  </head>
+  <body>
+    
+    <h1>체크 관련 인풋 타입</h1>
+  
+    <form action="#">
+      <h2>checkbox</h2>
+      <input 
+        id="cbIp"
+        type="checkbox"
+        checked
+      >
+      <label for="cbIp">유기농</label> <br>
+  
+      <h2>radio</h2>
+      <input
+        type="radio"
+        name="fruit"
+        id="f_apple"
+        value="apple"
+        checked
+      >
+      <label for="f_apple">사과</label>
+      <input
+        type="radio"
+        name="fruit"
+        id="f_grape"
+        value="grape"
+      >
+      <label for="f_grape">포도</label>
+      <input
+        type="radio"
+        name="fruit"
+        id="f_orange"
+        value="orange"
+      >
+      <label for="f_orange">오렌지</label>
+      <br>
+  
+      <input
+        type="radio"
+        name="vege"
+        id="v_carrot"
+        value="carrot"
+        checked
+      >
+      <label for="v_carrot">당근</label>
+      <input
+        type="radio"
+        name="vege"
+        id="v_tomato"
+        value="tomato"
+      >
+      <label for="v_tomato">토마토</label>
+      <input
+        type="radio"
+        name="vege"
+        id="v_eggplant"
+        value="eggplant"
+      >
+      <label for="v_eggplant">가지</label>
+  
+    </form>
+  
+    <h1>기타 인풋 타입</h1>
+
+    <form action="#">
+      <label for="fileIp">file</label> <br>
+      <input 
+        id="fileIp"
+        type="file"
+        accept="image/png, image/jpeg" 
+        multiple
+      >
+      <br><br>
+  <!--특정 확장자만 가지고 싶으면 accept! multiple은 여러개 파일을 선택하고 싶을때!-->
+      <label for="hdnIp">hidden</label> <br>
+      <input
+        id="hdnIp"
+        type="hidden"
+      >
+    </form>
+  <!--사용자는 보면 안되는데 데이터를 받아야만 할때! -->
+    <br><hr><br>
+  
+    <form action="#">
+      <label for="emlIp">email</label> <br>
+      <input 
+        id="emlIp"
+        type="email"
+      >
+      <br><br>
+  
+      <button type="submit">제출</button>
+      <!--제출을 눌렀을 때 이메일 양식을 찾아볼 수 있다! 하지만 제대로된 유효성 검사는 아니다-> 자바스크립트로 섬세하게 진행!-->
+    </form>
+
+
+    <h1>인풋 요소 공통(대부분) 속성</h1>
+
+    <form action="#">
+      <label for="valIp">value</label> <br>
+      <input 
+        id="valIp"
+        type="text"
+        value="지정됨"
+      >
+      <br><br>
+  
+      <label for="afIp">autofocus</label> <br>
+      <input 
+        id="afIp"
+        type="text"
+        placeholder="자동 포커스됨"
+        autofocus
+      >
+      <br><br>
+  
+      <label for="roIp">readonly</label> <br>
+      <input 
+        id="roIp"
+        type="text"
+        value="읽기만 가능, 전송됨"
+        readonly
+      >
+      <br><br>
+  
+      <label for="rqIp">required</label> <br>
+      <input 
+        id="rqIp"
+        type="text"
+        placeholder="필수입력!"
+        required
+      >
+      <br><br>
+  
+      <label for="daIp">disabled</label> <br>
+      <input 
+        id="daIp"
+        type="text"
+        placeholder="입력불가, 전송 안됨"
+        disabled
+      >
+      <br><br>
+      <input
+        type="radio"
+        name="fruit"
+        id="f_apple"
+        value="apple"
+        checked
+      >
+      <label for="f_apple">사과</label>
+      <input
+        type="radio"
+        name="fruit"
+        id="f_grape"
+        value="grape"
+      >
+      <label for="f_grape">포도</label>
+      <input
+        type="radio"
+        name="fruit"
+        id="f_orange"
+        value="orange"
+        disabled
+      >
+      <label for="f_orange">오렌지(품절)</label>
+      <br>
+  
+      <br><br>
+  
+      <button type="submit">제출</button>
+    </form>
+    
 </body>
-
 </html>
