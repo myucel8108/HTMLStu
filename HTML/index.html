@@ -1,261 +1,160 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../pretty.css">
-  <title>HTML & CSS 01-09-01</title>
+  <title>HTML & CSS 01-10-01</title>
 </head>
 <body>
+
+  <h1>textarea 태그</h1>
+
+  <label for="message">메시지를 입력하세요.</label> <br>
+  <textarea id="message" cols="64" rows="5" placeholder="플레이스홀더를 쓸때는 textarea태그는 공백조차 있으면 안된다."></textarea>
+  <!--cols는 글자수의 넓이!rows는 표시되는 줄-> 단 입력은 더 가능하지만 한번에 얼마정도 보여줄지를 알 수 있다.-->
+  <!--textarea태그 사이에 값을 넣어주면 기본값으로 사용할 수 있음-->
+
   
-  <h1>텍스트 관련 인풋 타입</h1>
+  <h1>옵션들을 사용하는 태그</h1>
 
-  <form action="#">
-    <label for="txtIp">text</label> <br>
-    <input 
-      id="txtIp"
-      type="text"
-      placeholder="5자 이하"
-      maxlength="5"
-    >
-    <br><br>
+  <h2>select, option 태그</h2>
 
-    <label for="pwdIp">password</label> <br>
-    <input
-      id="pwdIp"
-      type="password"
-      placeholder="4자 이상"
-      minlength="4"
-    >
-    <br><br>
+  <label for="lang">언어</label> <br>
+  <select id="lang" multiple> <!--파일처럼 여러개 누르고 싶을 때! shift키를 써보자-->
+    <option value="">-- 언어 선택 --</option>
+    <option value="html" selected>HTML</option> <!--selected를 쓰면 radio에 checked처럼 기본 값을 가능!-->
+    <option value="css">CSS</option> <!--value는 서버에 보내줄 데이터 옵션 태그 사이에는 라벨처럼 사용한다!-->
+    <option value="js">자바스크립트</option>
+    <option value="ts">타입스크립트</option>
+  </select>
 
-    <label for="srchIp">search</label> <br>
-    <input id="srchIp" type="search">
-    <br><br>
+  <br><br>
 
-    <label for="tlIp">tel</label> <br>
-    <input id="tlIp" type="tel">
-    <br><br>
-    <button type="submit">제출</button>
-  </form>
+  <h2>optgroup 태그</h2>
 
-  <h1>숫자 관련 인풋 타입</h1>
+  <label for="shopping">쇼핑 목록</label> <br>
+  <select id="shopping">
+    <optgroup label="과일"> <!--select안에 그룹으로 묶어서 세련되게 사용해보자!-->
+      <option value="f_apl">사과</option>
+      <option value="f_grp">포도</option>
+      <option value="f_org">오렌지</option>
+    </optgroup>
+    <optgroup label="채소">
+      <option value="v_crt">당근</option>
+      <option value="v_tmt">토마토</option>
+      <option value="v_ept">가지</option>
+    </optgroup>
+    <optgroup label="육류">
+      <option value="m_bef">소고기</option>
+      <option value="m_prk">돼지고기</option>
+      <option value="m_ckn">닭고기</option>
+    </optgroup>
+  </select>
 
-  <form action="#">
-    <label for="numIp">number</label> <br>
-    <input 
-      id="numIp"
-      type="number"
-      min="0"
-      max="10"
-    >
-    <br><br>
+  <br><br>
 
-    <label for="rgIp">range</label> <br>
-    <input
-      id="rgIp"
-      type="range"
-      min="0"
-      max="100"
-      step="20"
-    >
-    <br><br>
-    <!-- 그 자체를 사용하기에는 어려움이 있음 자바스크립트와 결합을 해야함!!-->
+  <h2>datalist 태그</h2>
 
-    <label for="dtIp">date</label> <br>
-    <input
-      id="dtIp"
-      type="date"
-      min="2020-01-01"
-      max="2030-12-31"
-    >
-    <br><br>
-
-  </form>
-  <!DOCTYPE html>
-  <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../pretty.css">
-    <title>HTML & CSS 01-09-03</title>
-  </head>
-  <body>
-    
-    <h1>체크 관련 인풋 타입</h1>
+  <label for="job">현재 직업</label> <br>
+  <input id="job" list="jobs"> <!--따로 텍스트를 적을수도 있고-->
+  <datalist id="jobs"> <!--선택조차 가능한 입력 요소!-->
+    <option value="학생">
+    <option value="디자이너">
+    <option value="퍼블리셔">
+    <option value="개발자">
+  </datalist>
   
-    <form action="#">
-      <h2>checkbox</h2>
-      <input 
-        id="cbIp"
-        type="checkbox"
-        checked
-      >
-      <label for="cbIp">유기농</label> <br>
   
-      <h2>radio</h2>
-      <input
-        type="radio"
-        name="fruit"
-        id="f_apple"
-        value="apple"
-        checked
-      >
-      <label for="f_apple">사과</label>
-      <input
-        type="radio"
-        name="fruit"
-        id="f_grape"
-        value="grape"
-      >
-      <label for="f_grape">포도</label>
-      <input
-        type="radio"
-        name="fruit"
-        id="f_orange"
-        value="orange"
-      >
-      <label for="f_orange">오렌지</label>
-      <br>
-  
-      <input
-        type="radio"
-        name="vege"
-        id="v_carrot"
-        value="carrot"
-        checked
-      >
-      <label for="v_carrot">당근</label>
-      <input
-        type="radio"
-        name="vege"
-        id="v_tomato"
-        value="tomato"
-      >
-      <label for="v_tomato">토마토</label>
-      <input
-        type="radio"
-        name="vege"
-        id="v_eggplant"
-        value="eggplant"
-      >
-      <label for="v_eggplant">가지</label>
-  
-    </form>
-  
-    <h1>기타 인풋 타입</h1>
+  <h1>정도를 표현하는 태그</h1>
 
-    <form action="#">
-      <label for="fileIp">file</label> <br>
-      <input 
-        id="fileIp"
-        type="file"
-        accept="image/png, image/jpeg" 
-        multiple
-      >
-      <br><br>
-  <!--특정 확장자만 가지고 싶으면 accept! multiple은 여러개 파일을 선택하고 싶을때!-->
-      <label for="hdnIp">hidden</label> <br>
-      <input
-        id="hdnIp"
-        type="hidden"
-      >
-    </form>
-  <!--사용자는 보면 안되는데 데이터를 받아야만 할때! -->
-    <br><hr><br>
-  
-    <form action="#">
-      <label for="emlIp">email</label> <br>
-      <input 
-        id="emlIp"
-        type="email"
-      >
-      <br><br>
-  
-      <button type="submit">제출</button>
-      <!--제출을 눌렀을 때 이메일 양식을 찾아볼 수 있다! 하지만 제대로된 유효성 검사는 아니다-> 자바스크립트로 섬세하게 진행!-->
-    </form>
+  <h2>
+    progress 태그
+  </h2>
+  <progress 
+    id="progressBar" 
+    max="100">
+    0%
+  </progress>
+  <button id="prgStartBtn" type="button">시작</button>
+  <!-- value가 들어가면 고정값이 되는 점을 생각하자 -->
+  <br><br>
 
+  <h2>
+    meter 태그
+  </h2>
 
-    <h1>인풋 요소 공통(대부분) 속성</h1>
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="50" value="20">
+    20달러
+  </meter>
+  <!-- 고정되는 값을 보여주는 방식임 -->
+  <!-- min max가 필수 인점이 중요함!
+   표시되는 색깔이 다르게 하는데 low, high를 이용하는것!
+   optimum은 가장 이상적인 값!
+  -->
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="50" value="50">
+    50달러
+  </meter>
 
-    <form action="#">
-      <label for="valIp">value</label> <br>
-      <input 
-        id="valIp"
-        type="text"
-        value="지정됨"
-      >
-      <br><br>
-      <!--처음에 사이트에 들어온다면 기본값이 들어가진다!-->
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="50" value="80">
+    80달러
+  </meter>
 
-      <label for="afIp">autofocus</label> <br>
-      <input 
-        id="afIp"
-        type="text"
-        placeholder="자동 포커스됨"
-        autofocus
-      >
-      <br><br>
-      <!--처음에 사이트에 들어온다면 가장먼저 포커스가 되는 곳을 지정하는 autofocus!-->
-      <label for="roIp">readonly</label> <br>
-      <input 
-        id="roIp"
-        type="text"
-        value="읽기만 가능, 전송됨"
-        readonly
-      >
-      <br><br>
-      <!--읽기만 가능하지만 전송은 가능!-->
-      <label for="rqIp">required</label> <br>
-      <input 
-        id="rqIp"
-        type="text"
-        placeholder="필수입력!"
-        required
-      >
-      <br><br>
-       <!--필수 입력에는 required!-->
-      <label for="daIp">disabled</label> <br>
-      <input 
-        id="daIp"
-        type="text"
-        placeholder="입력불가, 전송 안됨"
-        disabled
-      >
-      <br><br>
-     <!--읽기 전송조차 불가능!-->
-      <input
-        type="radio"
-        name="fruit"
-        id="f_apple"
-        value="apple"
-        checked
-      >
-      <label for="f_apple">사과</label>
-      <input
-        type="radio"
-        name="fruit"
-        id="f_grape"
-        value="grape"
-      >
-      <label for="f_grape">포도</label>
-      <input
-        type="radio"
-        name="fruit"
-        id="f_orange"
-        value="orange"
-        disabled
-      >
-      <label for="f_orange">오렌지(품절)</label>
-      <br>
-  
-      <br><br>
-  
-      <button type="submit">제출</button>
-    </form>
+  <br>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="10" value="20">
+    20달러
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="10" value="50">
+    50달러
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="10" value="80">
+    80달러
+  </meter>
+
+  <br>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="90" value="20">
+    20달러
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="90" value="50">
+    50달러
+  </meter>
+
+  <meter 
+    min="0" max="100"
+    low="33" high="67"
+    optimum="90" value="80">
+    80달러
+  </meter>
 
 </body>
 </html>
