@@ -5,76 +5,96 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../pretty.css">
-  <title>HTML & CSS 01-11-01</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <title>HTML & CSS 02-01-01</title>
+
+  <style>
+    .style-1 {
+      color: olivedrab;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./01.css">
+
 </head>
 <body>
 
-  <h1>pre 태그</h1>
-
-  <pre>
-pre 태그에 텍스트를 작성하면 스페이스, 탭, 엔터 등
-모든 공백 요소들이 이와 같이 화면에 그대로 적용됩니다.
-
-때문에 pre 태그는 아래의 아스키 아트(Ascii art)들처럼
-공백요소들을 적극 활용해야 하는 경우 유용하게 사용될 수 있습니다.
-
-하지만 스크린 리더는 pre 태그의 내용을 읽지 않으므로
-접근성을 위해 추가적인 조치가 필요하죠.
-이 부분은 HTML 심화편에서 다루겠습니다.
-
-  </pre>
-
-  <pre>
-    ,d888a                          ,d88888888888ba.  ,88"I)   d
-  a88']8i                         a88".8"8)   `"8888:88  " _a8'
-.d8P' PP                        .d8P'.8  d)      "8:88:baad8P'
-,d8P' ,ama,   .aa,  .ama.g ,mmm  d8P' 8  .8'        88):888P'
-,d88' d8[ "8..a8"88 ,8I"88[ I88' d88   ]IaI"        d8[         
-a88' dP "bm8mP8'(8'.8I  8[      d88'    `"         .88          
-,88I ]8'  .d'.8     88' ,8' I[  ,88P ,ama    ,ama,  d8[  .ama.g
-[88' I8, .d' ]8,  ,88B ,d8 aI   (88',88"8)  d8[ "8. 88 ,8I"88[
-]88  `888P'  `8888" "88P"8m"    I88 88[ 8[ dP "bm8m88[.8I  8[
-]88,          _,,aaaaaa,_       I88 8"  8 ]P'  .d' 88 88' ,8' I[
-`888a,.  ,aadd88888888888bma.   )88,  ,]I I8, .d' )88a8B ,d8 aI
-"888888PP"'        `8""""""8   "888PP'  `888P'  `88P"88P"8m"
-  </pre>
-  <h1>iframe 태그</h1>
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ffENjt7aEdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
-
-  
-
-  <h1>기타 알아둘만한 태그들</h1>
+  <h1>CSS를 적용하는 세 가지 방법</h1>
 
   <p>
-    kbd 태그는 <kbd>Ctrl</kbd> + <kbd>C</kbd> 와 같이 키보드 입력을 나타낼 때 사용합니다.
+    <b style="color: tomato;">
+      인라인 스타일(inline style)
+    </b>
+    방식은 HTML 태그마다 style 속성으로 CSS 코드를 넣어주는 방식입니다. <br> 여러 요소들에 공통 속성을 재사용하여 부여할 수 없고 HTML 코드와 CSS 코드가 분리되지 않기 때문에 <br> 특별한 경우를 제외하고는 사용되지 않습니다.
   </p>
+  <p>
+    <b class="style-1">내부 스타일 시트(internal style sheet)</b> 방식은 head 태그 안에 style 태그를 두고 그 안에 CSS 코드를 작성하는 방식입니다. <br>
+    HTML과 CSS의 전체 코드량이 많지 않고 CSS가 해당 HTML 문서에서만 적용될 경우 <br>
+    유용하게 사용될 수 있습니다.
+  </p>
+  <p>
+    <b class="style-2">링킹 스타일 시트(linking style sheet)</b> 방식은 외부의 CSS 파일을 HTML 문서에 연결하는 것입니다. <br>
+    HTML과 CSS의 코드가 분리되고 CSS 코드를 여러 HTML 파일에서 공통으로 사용할 수 있으므로 <br>
+    가장 널리 사용되는 방식입니다.
+  </p>
+
+  
+  <h1>기본 & 그룹 선택자</h1>
+
+  <span>
+    span 요소
+  </span>
 
   <p>
-    <dfn>dfn 태그</dfn>는 특정 맥락에서 정의, 설명하고 있는 용어를 나타낼 때 사용합니다.
+    p 요소
   </p>
 
-  <p>
-    small 태그는 <small>이와 같이 텍스트를 작게</small> 표시하는데 사용됩니다. 
+  <p class="blue">
+    p 요소, class는 blue
   </p>
+
+  <span class="blue">
+    span 요소, class는 blue
+  </span>
+
+  <p class="blue dark">
+    p 요소, class는 blue와 dark
+  </p>
+
+  <p class="blue" id="red">
+    p 요소, class는 blue, id는 red
+  </p>
+
+
   
-  
-  <h1>아무것도 하지 않는 두 태그</h1>
+	<h1>결합자와 가상 클래스</h1>
 
-  <span>span 태그 1</span>
-  <span>span 태그 2</span>
-  <span>span 태그 3</span>
-  <span>span 태그 4</span>
-  <span>span 태그 5</span>
+	<ul class="outer">
+		<li>육류</li>
+		<li>채소</li>
+		<li>유제품</li>
+		<li>과일
+			<ul>
+				<li>사과</li>
+				<li>포도</li>
+				<li>딸기</li>
+				<li>키위</li>
+			</ul>
+		</li>
+	</ul>
 
-  <br><br>
-
-  <div>div 태그 1</div>
-  <div>div 태그 2</div>
-  <div>div 태그 3</div>
-  <div>div 태그 4</div>
-  <div>div 태그 5</div>
+	<ol>
+		<li>한놈</li>
+		<li>두시기</li>
+		<li class="starter">석삼</li>
+		<li>너구리</li>
+		<li>다섯놈</li>
+		<li>육개장</li>
+		<li>칠푼이</li>
+		<li>팔보채</li>
+		<li>구공탄</li>
+	</ol>
+	
   
 </body>
 </html>
