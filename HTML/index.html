@@ -4,186 +4,89 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../pretty.css">
-  <link rel="stylesheet" href="../CSS/style.css">
-  <title>HTML & CSS 02-01-01</title>
 
+  <link rel='stylesheet' href='../../html-css-tester.css' />
+
+  <script defer src="../../html-css-tester.js"></script>
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit-icons.min.js"></script>
+
+  <style>
+    div {
+      padding: 24px;
+      border: 2px solid #eee;
+      width: 400px;
+    }
+  </style>
+
+  <title>HTML & CSS 02-03-01</title>
 
 </head>
 <body>
 
+  <main>
+    <section class="result">
 
-  <section class="result">
+      <!-- 시작 -->
 
-    <!-- 시작 -->
-
-    <p>
-      <strong>font-style</strong> 속성은 글자를 기울일 때 사용할 수 있습니다. <br><br>
-      <em>italic</em>과 <em>oblique</em>은 얼핏 보면 비슷한데 <br>
-      italic이 '기울여서 쓴' 서체라면 <br>
-      oblique는 본래 서체를 기울여놓은 것입니다. <br><br>
-      서체마다 둘 다 있거나 한 쪽만 있거나 둘 다 없을 수도 있는데 <br>
-      이들은 한쪽이 없을 시 상호 교차되어 사용됩니다.
-    </p>
-
-    <hr>
-
-    <p>
-      <strong>font-weight</strong> 속성은 글자의 굵기를 조절합니다. <br><br>
-      서체가 어떤 굵기를 지원하느냐에 따라 <em>normal</em>과 <em>bold</em>중에 선택하거나 <br>
-      100~900 사이 100 단위의 수치를 사용합니다. <br><br>
-
-      <a href="https://developer.mozilla.org/ko/docs/Web/CSS/font-weight#%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8_%EA%B0%80%EC%A4%91%EC%B9%98_%EC%9D%B4%EB%A6%84_%EB%A7%A4%ED%95%91" target="_blank">굵기마다의 이름 매핑 보기</a>
-    </p>
-
-    <!-- 끝 -->
-
-  </section>
-  <section class="controls2"></section>
-
-  <section class="result">
-
-    <!-- 시작 -->
-    바깥
-    <div>중간
-      <div>안쪽</div>
-    </div> 
-    div 바깥에 있는 텍스트입니다.
-
-    <div id="outer">
-      맨 바깥쪽 div의 텍스트입니다.
       <div>
-        중간 div의 텍스트입니다.
-        <div>
-          <strong>font-size</strong> 속성은 말 그대로 글자의 크기를 지정합니다. <br>
-          단위로는 <em>px</em>과 <em>%</em>, <em>em</em>, <em>rem</em>이 사용되죠. <br><br>
-          <em>px</em>는 절대값으로서 픽셀 단위입니다. <br>
-          <em>100%</em>는 <em>1em</em>으로, 이들은 부모 요소와의 상대적 크기를 나타내죠. <br>
-          <em>rem</em>은 html 요소와의 상대적 크기를 가지므로, 요소의 중첩에 영향을 받지 않습니다. <br>
-          <em>pt</em>는 1인치/72로, 프린트할 컨텐츠에 사용됩니다.
-        </div>
+        <h1>정렬과 간격</h1>
+        <p>
+          <strong>text-align</strong> 속성은 텍스트의 정렬 방식을 지정합니다. 직관적으로 알 수 있듯, 기본값인 <em>left</em>는 왼쪽, <em>center</em>는 가운데, <em>right</em>은 오른쪽으로 텍스트(및 인라인 요소들)을 정렬하죠. <em>justify</em>는 왼쪽으로 정렬하면서, 텍스트가 여러 줄이 될 때 마지막 줄을 제외한 줄들의 오른쪽이 나란히 되도록 각 줄의 공간을 조절합니다.
+        </p>
+        <p>
+          <strong>letter-spacing</strong>으로는 자간, <strong>word-spacing</strong>으로는 단어 간격, <strong>line-height</strong>으로는 줄 높이를 조절할 수 있습니다.
+        </p>
       </div>
-    </div>
 
-    <!-- 끝 -->
+      <!-- 시작 -->
 
-  </section>
-  <section class="controls"></section>
+    </section>
+    <section class="controls"></section>
+  </main>
 
-  <section class="result">
-
-    <!-- 시작 -->
-    
-    <p>
-      <strong>text-decoration</strong> 속성은 밑줄, 취소선, 물결선 등으로 <br>
-      글을 꾸며주는데 사용됩니다. <br><br>
-      여러 꾸밈요소를 함께 사용할 수 있으며 <br>
-      선의 형태, 색, 굵기 등 디테일을 지정할 수도 있습니다. <br><br>
-      아래 링크에서 상세 내용과 구성 속성들을 확인하세요. <br>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="_blank">👉 &nbsp;MDN 문서 보기</a>
-    </p>
-    <hr>
-    <p>
-      <strong>text-transform</strong> 속성은 알파벳의 대소문자 표시에 사용됩니다. <br><br>
-      HTML, CSS와 같이 대문자로 작성된 텍스트는 <em>capitalize</em>에 영향을 받지 않습니다.
-    </p>
-    <p>HTML & CSS Programming is fun!</p>
-    <!-- 끝 -->
-
-  </section>
-  <section class="controls"></section>
-
-
-  <p>이런 것도 가능합니다.</p>
-</body>
-</html>
-<script>
-  
-  const controls = [
-    {
-      obj: {
-        name: 'p 요소들',
-        query: 'p'
-      },
-
-      fields: [
-        {
-          type: 'select',
-          style: 'font-style',
-          opts: [
-            'normal',
-            'italic',
-            'oblique'
-          ]
-        },
-        {
-          type: 'select',
-          style: 'font-weight',
-          opts: [
-            'normal',
-            'bold',
-            '100',
-            '200',
-            '300',
-            '400',
-            '500',
-            '600',
-            '700',
-            '800',
-            '900',
-          ]
-        },
-      ]
-    }
-  ]
-  const controls2 = [
+  <script>
+    const controls = [
       {
         obj: {
-          name: 'div 요소들',
+          name: 'div 요소',
           query: 'div'
         },
-
         fields: [
+          {
+            type: 'radio',
+            style: 'text-align',
+            opts: [
+              'left',
+              'right',
+              'center',
+              'justify'
+            ]
+          },
           {
             type: 'text',
-            style: 'font-size',
-            default: '100%'
-          }
-        ]
-      }
-    ]
-    const controls3 = [
-      {
-        obj: {
-          name: 'p 요소들',
-          query: 'p'
-        },
-
-        fields: [
-          {
-            type: 'select',
-            style: 'text-decoration',
-            opts: [
-              'none',
-              'underline',
-              'line-through',
-              'underline line-through overline',
-              'wavy underline tomato',
-              'dotted underline overline #008000 4px',
-              'dashed line-through deeppink 2px'
-            ]
+            style: 'letter-spacing',
+            default: '0'
           },
           {
-            type: 'select',
-            style: 'text-transform',
-            opts: [
-              'none',
-              'capitalize',
-              'uppercase',
-              'lowercase'
-            ]
+            type: 'text',
+            style: 'word-spacing',
+            default: '0'
+          },
+          {
+            type: 'text',
+            style: 'line-height',
+            default: '1.5em'
           },
         ]
-      }
+      },
     ]
-</script>
+  </script>
+  
+</body>
+</html>
