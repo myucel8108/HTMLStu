@@ -5,209 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel='stylesheet' href='../../html-css-tester.css' />
-  <link rel='stylesheet' href='./sample.css' />
-
-  <script defer src="../../html-css-tester.js"></script>
-
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css" />
-
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href="../pretty.css">
 
   <style>
-    ul {
-      list-style: none;
-      padding: 0;
+    body {
+      font-size: 1.24em;
     }
-    ul li {
-      display: inline-block;
-      margin-right: 8px;
-      color: #777;
-      font-weight: bold;
-      font-size: 0.9em;
+    div {
+      padding: 24px;
+      box-sizing: border-box;
+      background-color: skyblue;
+      width: 24em;
     }
-    ul li > div {
-      margin-top: 8px;
-      width: 140px;
-      height: 140px;
-      border-radius: 8px;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z'  stroke-width='1' stroke='hsla(259, 0%, 88%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+    p {
+      width: 24em;
     }
-    ul li > div > div {
-      width: 100%;
-      height: 100%;
-      background-color: white;
+    span {
+      background-color: yellow;
     }
   </style>
 
-  <title>HTML & CSS 02-04-01</title>
-
+  <title>Inline vs Block</title>
 </head>
 <body>
 
-  <main>
-    <section class="result">
+  <div>
+    <strong>블록 요소</strong>는 딱딱한 상자와도 같습니다. <br>
+    이 파란색 상자처럼 사각형의 형태를 갖고 있으며
+    너비와 높이, 안팎의 간격을 부여받을 수 있죠.
+  </div>
 
-      <!-- 시작 -->
+  <br>
 
-      <h1>색상 표현하기</h1>
-
-      <p>
-        CSS에서는 아래의 형식들을 사용하여 색상을 지정할 수 있습니다.
-      </p>
-
-      <ul>
-        <li id="keyword">
-          Keyword 
-          <div><div></div></div>
-        </li>
-        <li id="rgb">
-          RGB(A)
-          <div><div></div></div>
-        </li>
-        <li id="hex">
-          HEX
-          <div><div></div></div>
-        </li>
-        <li id="hsl">
-          HSL(A)
-          <div><div></div></div>
-        </li>
-      </ul>
-
-      <p>
-        <em>keyword</em>는 색상마다 부여된 이름으로
-        <a href="https://developer.mozilla.org/ko/docs/Web/CSS/color_value#%EC%83%89%EC%83%81_%ED%82%A4%EC%9B%8C%EB%93%9C" target="_blank">이 링크에서</a> 목록을 확인할 수 있습니다.
-        <br><br>
-        <em>RGB(A)</em>는 빨강, 초록, 파랑의 광원으로 색을 혼합하는 방식이며 <br>
-        끝에 알파값을 붙여서 투명도를 조절할 수 있죠.
-        <br><br>
-        <em>HEX</em>는 R, G, B, Alpha 값들을 16진수형태로 나타낸 것입니다.
-        <br><br>
-        <em>HSL(A)</em>은 색상, 채도, 명도값 그리고 알파값을 조합하여 색을 나타냅니다.
-      </p>
-
-    <!-- 끝 -->
-
-    </section>
-    <section class="controls"></section>
-  </main>
-
-  <script>
-    const controls = [
-      {
-        obj: {
-          name: 'Keyword',
-          query: '#keyword > div > div'
-        },
-        fields: [
-          {
-            type: 'select',
-            style: 'background-color',
-            opts: [
-              'white',
-              'black',
-              'blue',
-              'red',
-              'yellow',
-              'green',
-              'purple',
-              'darkorange',
-              'deeppink',
-              'indigo',
-              'coral',
-              'lavender',
-              'wheat',
-              'transparent'
-            ]
-          },
-        ]
-      },
-      {
-        obj: {
-          name: 'RGB(A)',
-          query: '#rgb > div > div'
-        },
-        fields: [
-          {
-            type: 'select',
-            style: 'background-color',
-            opts: [
-              'rgb(255, 255, 255)',
-              'rgb(0, 0, 0)',
-              'rgb(100%, 0%, 0%)',
-              'rgb(0%, 100%, 0%)',
-              'rgb(0%, 50%, 0%)',
-              'rgb(25%, 0%, 100%)',
-              'rgb(50, 50, 50)',
-              'rgb(200, 200, 200)',
-              'rgb(255, 140, 0)',
-              'rgb(173, 255, 47)',
-              'rgba(0, 0, 0, 0.25)',
-              'rgba(100%, 0%, 0%, 50%)',
-              'rgba(255, 140, 0, 0.1)',
-            ]
-          },
-        ]
-      },
-      {
-        obj: {
-          name: 'HEX',
-          query: '#hex > div > div'
-        },
-        fields: [
-          {
-            type: 'select',
-            style: 'background-color',
-            opts: [
-              '#FFFFFF',
-              '#000000',
-              '#FF0000',
-              '#555555',
-              '#555',
-              '#050505',
-              '#dddddd',
-              '#ddd',
-              '#0000FF80',
-              '#00000000'
-            ]
-          },
-        ]
-      },
-      {
-        obj: {
-          name: 'HSL(A)',
-          query: '#hsl > div > div'
-        },
-        fields: [
-          {
-            type: 'select',
-            style: 'background-color',
-            opts: [
-              'hsl(0, 100%, 100%)',
-              'hsl(0, 100%, 50%)',
-              'hsl(0, 100%, 0%)',
-              'hsl(0, 50%, 50%)',
-              'hsl(0, 0%, 50%)',
-              'hsl(60, 100%, 50%)',
-              'hsl(120, 100%, 50%)',
-              'hsl(180, 100%, 50%)',
-              'hsl(240, 100%, 50%)',
-              'hsl(300, 100%, 50%)',
-              'hsl(360, 100%, 50%)',
-              'hsla(360, 100%, 50%, 0.5)',
-              'hsla(360, 100%, 50%, 0)',
-            ]
-          },
-        ]
-      },
-    ]
-  </script>
+  <p>
+    반면 <strong>인라인 요소</strong>는 비닐이나 랩 안에 내용물을 넣은 것과도 같습니다.
+    <span>이 텍스트처럼, 일정한 바깥 형태나 껍데기 없이 페이지의 흐름에 따라</span>
+    다른 텍스트나 컨텐츠와 어우러져 배치되죠. 위의 노란 부분이 인라인 요소입니다.
+  </p>
   
 </body>
 </html>

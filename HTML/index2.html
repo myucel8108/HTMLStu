@@ -17,12 +17,17 @@
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/js/uikit-icons.min.js"></script>
 
   <style>
-    ul {
+    span, div { 
       font-size: 1.2rem;
+      color: white; 
     }
+    span { background-color: slateblue; }
+    span:nth-child(even) { background-color: rgba(106, 90, 205, 0.85) }
+    div { background-color: tomato; }
+    div:nth-child(even) { background-color: rgba(255,99,71, 0.85); }
   </style>
 
-  <title>HTML & CSS 02-03-03</title>
+  <title>HTML & CSS 02-05-01</title>
 
 </head>
 <body>
@@ -32,27 +37,36 @@
 
       <!-- 시작 -->
 
-      <ul>
-        <li>저스티스 리그</li>
-        <li>어벤져스</li>
-        <li>엑스맨
-          <ol>
-            <li>퍼스트 클래스</li>
-            <li>데이즈 오브 퓨쳐 패스트</li>
-            <li>아포칼립스</li>
-            <li><s>다크피닉스</s></li>
-          </ol>
-        </li>
-      </ul>
+      <span>span 요소</span>
 
-      <p>
-        <strong>list-style</strong> 속성으로 ul과 ol 목록의 불릿, 숫자 스타일을 지정할 수 있습니다. <br>
-        ul, ol 여부와 관계없이 기호, 서수, 원하는 문자, 이모지, 심지어 이미지까지 사용할 수 있죠. <br><br>
-        <em>none</em> 값을 사용하여 아무것도 붙이지 않을 수도 있습니다. <br><br>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style" target="_blank">👉 MDN에서 더 자세한 설정 방법 보기</a>
-      </p>
+      <div>div 요소</div>
 
-    <!-- 끝 -->
+      <span>span 요소</span>
+      <span>span 요소</span>
+
+      <div>div 요소</div>
+      <div>div 요소</div>
+
+      <span>span 요소</span>
+      <span>span 요소</span>
+      <span>span 요소</span>
+
+      <div>div 요소</div>
+      <div>div 요소</div>
+      <div>div 요소</div>
+      <br>
+
+      텍스트 사이에 들어있는 <span>span 요소</span>입니다. 
+      <br><br>
+
+      <div>
+        div 요소 안에 들어있는 <span>span 요소</span> 입니다.
+      </div>
+      <br>
+
+      <span>span 요소 안에 들어있는 <div>div 요소</div>입니다.</span>
+
+      <!-- 끝 -->
 
     </section>
     <section class="controls"></section>
@@ -62,55 +76,63 @@
     const controls = [
       {
         obj: {
-          name: 'ul 요소',
-          query: 'ul'
+          name: 'span 요소',
+          query: 'span'
         },
         fields: [
           {
-            type: 'select',
-            style: 'list-style',
+            type: 'radio',
+            style: 'display',
             opts: [
-              'disc',
-              'circle',
-              'square',
-              '"-  "',
-              '"👉   "',
-              'url(./yalco.png)',
-              'decimal',
-              'lower-alpha',
-              'upper-alpha',
-              'lower-roman',
-              'upper-roman',
-              'lower-greek',
-              'none',
+              'inline',
+              'block',
+              'inline-block',
             ]
           },
         ]
       },
       {
         obj: {
-          name: 'ol 요소',
-          query: 'ol'
+          name: 'div 요소',
+          query: 'div'
         },
         fields: [
           {
-            type: 'select',
-            style: 'list-style',
+            type: 'radio',
+            style: 'display',
             opts: [
-              'decimal',
-              'lower-alpha',
-              'upper-alpha',
-              'lower-roman',
-              'upper-roman',
-              'lower-greek',
-              'disc',
-              'circle',
-              'square',
-              '"-  "',
-              '"👉   "',
-              'url(./yalco.png)',
-              'none',
+              'block',
+              'inline',
+              'inline-block',
             ]
+          },
+        ]
+      },
+      {
+        obj: {
+          name: 'span과 div 요소',
+          query: 'span, div'
+        },
+        fields: [
+          {
+            type: 'text',
+            style: 'width',
+            default: ''
+          },
+          {
+            type: 'text',
+            style: 'height',
+            default: ''
+          },
+          {
+            type: 'text',
+            style: 'margin',
+            default: '0'
+          },
+          {
+            type: 'text',
+            style: 'padding',
+            default: '0'
           },
         ]
       },
